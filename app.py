@@ -172,14 +172,8 @@ def drop():
     item = request.form[drop]
     return render_template('stock.html', column=column)
 
-  #  with open('stocks.csv', 'r') as file:
-   #     reader = csv.DictReader(file)
-    #    column_values = [row[1] for row in reader]
-    
-    # Pass the column values to the template
-    return render_template('index.html', column_values=column_values)
 
-  #  return render_template('stock.html', column_values=column_values)
+    return render_template('stock.html', column_values=column_values)
 
 if __name__ == '__main__':
     app.run(debug=True)
