@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+   <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %} - FlaskApp</title>
+    <style>
+        .post {
+            padding: 10px;
+            margin: 5px;
+            background-color: #f3f3f3;
+            align-content: center;
+        }
+
+        nav a {
+            color: green;
+            font-size: 3em;
+            margin-left: 50px;
+            text-decoration: none;
+            align-content: center;
+        }
+
+        .alert {
+            padding: 20px;
+            margin: 5px;
+            color: green;
+            background-color: #ffd5de;
+            align-content: center;
+        }
+    </style>
+  
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('index') }}">Stock Visualizer</a>
+        <a href="{{ url_for('create') }}">-</a>
+        <a href="#">-</a>
+    </nav>
+    <hr>
+   <div class="content">
+        {% for message in get_flashed_messages() %}
+            <div class="alert">{{ message }}</div>
+        {% endfor %}
+
+        
+    </div>
+</body>
+</html>
